@@ -11,11 +11,11 @@ def get_data(url):
     
     for book in books:
         item={}
-        item["Title"] = book.find("img", clas_="thumbnail")
-        if item["Title"] is not None:
-            item["Title"] = item["Title"].attrs["alt"]
+        item["title"] = book.find("img", class_="thumbnail")
+        if item["title"] is not None:
+            item["title"] = item["title"].attrs["alt"]
         else:
-            item["Title"] = "N/A"
+            item["title"] = "N/A"
 
         item["Price"] = book.find("p",class_="price_color").text[1:]
         data.append(item)
